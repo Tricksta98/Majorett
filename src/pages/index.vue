@@ -1,7 +1,7 @@
 <template>
-  <v-parallax :src="getImageUrl('header2.jpg')" height="100vh">
+  <v-parallax :src="getImageUrl('header1.jpg')" height="100vh">
     <!-- Navigation Bar -->
-    <v-app-bar absolute flat :style="{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }">
+    <v-app-bar absolute flat :style="{ backgroundColor: 'rgba(255,179,179,0.35)' }">
       <v-spacer></v-spacer>
       <v-btn variant="text" class="text-white" @click="">Home</v-btn>
       <v-btn variant="text" class="text-white" @click="">Impressum</v-btn>
@@ -31,7 +31,7 @@
 
   <v-row class="bgc" style="padding-top: 80px; padding-bottom:80px;">
     <v-col cols="4">
-      <v-card elevation="5" class="mx-auto bg-white" max-width="350">
+      <v-card elevation="5" class="mx-auto bg-white float-right" max-width="350">
         <v-img
             color="surface-variant"
             height="200"
@@ -55,7 +55,7 @@
         <v-img
             color="surface-variant"
             height="200"
-            :src="getImageUrl('header.jpg')"
+            :src="getImageUrl('gallery4.jpg')"
             cover
         >
         </v-img>
@@ -71,7 +71,7 @@
       </v-card>
     </v-col>
     <v-col cols="4">
-      <v-card elevation="5" class="mx-auto bg-white" max-width="350">
+      <v-card elevation="5" class="mx-auto bg-white float-left" max-width="350">
         <v-img
             color="surface-variant"
             height="200"
@@ -94,8 +94,8 @@
 
   <v-row class="mt-12 mb-6">
     <v-col>
-      <h2 style="font-size: 40px;" class="text-center">Wir sind Deutscher Meister 2016 in 5 Kategorien!</h2>
-      <p class="mt-4 text-center">Unsere Erfolge bei der Deutschen Meisterschaft für Majoretten vom 1. und 2. Oktober 2016 in Berlin</p>
+      <h2 style="font-size: 40px;" class="text-center default-red">Wir sind Deutscher Meister 2016 in 5 Kategorien!</h2>
+      <p class="mt-4 text-center default-red">Unsere Erfolge bei der Deutschen Meisterschaft für Majoretten vom 1. und 2. Oktober 2016 in Berlin</p>
     </v-col>
   </v-row>
 
@@ -111,10 +111,10 @@
   </v-row>
 
   <v-row class="bgc" justify="center" align="center">
-    <v-col class="py-12 pr-6 pl-6 text-center" cols="6">
+    <v-col class="py-12 pr-6 pl-6 text-center" style="max-width: 600px; float: right;" cols="6">
       <h2 class="text-center text-black">Wir sind sicher, daß wir durch
         unseren Auftritt Ihr Fest bereichern
-        und Ihre Gäste begeistern werden !!</h2>
+        und Ihre Gäste begeistern werden</h2>
       <p class="text-center text-black mt-4">Wir tanzen und marschieren in unserer rot-weißen Gardeuniform, für unsere
         Showtänze haben wir schicke Tanzkostüme in unserem Fundus.
         Überzeugen Sie sich selbst von unserem Können.
@@ -123,14 +123,14 @@
         Wir sind sicher, daß wir durch </p>
     </v-col>
     <v-col class="py-12 text-center" cols="6">
-      <v-img :src="getImageUrl('gallery1.jpg')" width="100%" height="400px"></v-img>
+      <v-img :src="getImageUrl('gallery4.jpg')" height="350px"></v-img>
     </v-col>
   </v-row>
 
   <v-row class="py-12" align="center" justify="center">
     <v-col cols="12" style="max-width: 800px;">
       <div class="text-center" style="max-width: 800px;">
-        <h2>Kontaktiere uns jetzt!</h2>
+        <h2 class="default-red">Kontaktiere uns jetzt!</h2>
         <v-btn color="red" class="text-white mt-4" href="mailto:info@majorettencorps.de">Kontaktieren</v-btn>
       </div>
     </v-col>
@@ -208,6 +208,6 @@ export default {
 }
 
 .bgc {
-  background-color: #d2d0dd;
+  background-color: rgba(255, 179, 179, 0.35);
 }
 </style>
