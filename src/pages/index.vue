@@ -20,20 +20,20 @@
       <v-col cols="12">
         <div class="mx-auto" :style="{ maxWidth: mdAndUp ? '1400px' : '90%' }">
           <h1
-              class="heading text-white text-uppercase mb-3"
+              class="heading text-white text-uppercase mb-3 text-shadow heading-font"
               :class="mdAndUp ? 'display-2 font-weight-bold' : 'text-center mobile-heading font-weight-bold'"
           >
             1. Majorettencorps Berlin e.V.
           </h1>
           <p
-              class="subheading text-white"
+              class="subheading text-white text-shadow heading-font"
               :class="mdAndUp ? 'font-weight-regular pl-4' : 'font-weight-regular text-center px-2'"
           >
             Les Amis - Die Freunde
           </p>
           <v-btn
               variant="outlined"
-              class="text-white mt-10"
+              class="text-white mt-10 text-shadow heading-font"
               :class="mdAndUp ? 'ml-4' : 'mx-auto d-block'"
               size="large"
               :style="{
@@ -53,7 +53,7 @@
 
   <v-row class="bgc" style="padding-top: 80px; padding-bottom:80px;">
     <v-col cols="12" md="4" class="d-flex justify-center">
-      <v-card elevation="5" class="mx-auto bg-white float-right" max-width="350" min-height="550">
+      <v-card elevation="5" class="mx-auto bg-white float-right standard-rounding" max-width="350" min-height="550">
         <v-img
             color="surface-variant"
             height="260"
@@ -73,7 +73,7 @@
       </v-card>
     </v-col>
     <v-col cols="12" md="4" class="d-flex justify-center">
-      <v-card elevation="5" class="mx-auto bg-white" max-width="350" min-height="550">
+      <v-card elevation="5" class="mx-auto bg-white standard-rounding" max-width="350" min-height="550">
         <v-img
             color="surface-variant"
             height="260"
@@ -94,7 +94,7 @@
       </v-card>
     </v-col>
     <v-col cols="12" md="4" class="d-flex justify-center">
-      <v-card elevation="5" class="mx-auto bg-white float-left" max-width="350" min-height="550">
+      <v-card elevation="5" class="mx-auto bg-white float-left standard-rounding" max-width="350" min-height="550">
         <v-img
             color="surface-variant"
             height="260"
@@ -130,7 +130,7 @@
   <v-row class="pb-12" align="center" justify="center">
     <v-col cols="12" style="max-width: 800px;">
       <div class="text-center" style="max-width: 800px;">
-        <video width="400px" controls loop>
+        <video :width="mdAndUp ? '400px' : '100%'" :class="mdAndUp ? 'standard-rounding' : ''" controls loop>
           <source :src="getVideoUrl('majorett.mp4')" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -151,7 +151,7 @@
         verteidigt. </p>
     </v-col>
     <v-col class="text-center" :class="mdAndUp ? 'py-12' : 'pb-0'" cols="12" md="6">
-      <v-img :src="getImageUrl('klenen2.jpg')" height="350px"></v-img>
+      <v-img :class="mdAndUp ? 'standard-rounding' : ''" class="mx-auto" :src="getImageUrl('klenen2.jpg')" max-width="380px" height="350px"></v-img>
     </v-col>
   </v-row>
 
@@ -257,6 +257,22 @@ export default {
 
 .info-row-padding{
   padding-left: 20px;
+}
+
+.trash-bin{
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.text-shadow{
+  text-shadow: #000000 1px 0 10px;
+}
+
+.standard-rounding{
+  border-radius: 10px;
+}
+
+.heading-font{
+
 }
 
 @media (min-width: 500px) {
