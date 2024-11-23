@@ -3,15 +3,21 @@
   <!-- Navigation Bar -->
   <v-app-bar absolute flat :style="{ backgroundColor: 'rgba(250,31,31,0.45)' }">
     <v-spacer></v-spacer>
-    <v-btn variant="text" class="text-white" @click="">Home</v-btn>
-    <v-btn variant="text" class="text-white" @click="">Impressum</v-btn>
-    <v-btn variant="text" class="text-white" @click="">Datenschutz</v-btn>
+    <v-btn variant="text" class="text-white" @click="">
+      <router-link to="/" class="text-white text-decoration-none">Home</router-link>
+    </v-btn>
+    <v-btn variant="text" class="text-white" @click="">
+      <router-link to="/impressum" class="text-white text-decoration-none">Impressum</router-link>
+    </v-btn>
+    <v-btn variant="text" class="text-white" @click="">
+      <router-link to="/datenschutz" class="text-white">Datenschutz</router-link>
+    </v-btn>
     <v-spacer></v-spacer>
   </v-app-bar>
 
   <!-- Text Content -->
   <div class="mx-auto" style="margin-top: 100px; max-width: 1400px">
-    <h1 class="heading display-2 text-center font-weight-bold mb-3 text-black text-uppercase">Datenschutz</h1>
+    <h1 class="text-center font-weight-bold mb-3 text-black text-uppercase">Datenschutz</h1>
   </div>
 
   <div class="content">

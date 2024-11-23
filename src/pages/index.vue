@@ -1,25 +1,47 @@
 <template>
-  <v-parallax :src="getImageUrl('header1.jpg')" height="100vh">
+  <v-parallax :src="getImageUrl('header1.jpg')" :height="mdAndUp ? '100vh' : '70vh'">
     <!-- Navigation Bar -->
     <v-app-bar absolute flat :style="{ backgroundColor: 'rgba(250,31,31,0.45)' }">
       <v-spacer></v-spacer>
-      <v-btn variant="text" class="text-white" @click="">Home</v-btn>
-      <v-btn variant="text" class="text-white" @click="">Impressum</v-btn>
-      <v-btn variant="text" class="text-white" @click="">Datenschutz</v-btn>
+      <v-btn variant="text" class="text-white" @click="">
+        <router-link to="/" class="text-white">Home</router-link>
+      </v-btn>
+      <v-btn variant="text" class="text-white" @click="">
+        <router-link to="/impressum" class="text-white text-decoration-none">Impressum</router-link>
+      </v-btn>
+      <v-btn variant="text" class="text-white" @click="">
+        <router-link to="/datenschutz" class="text-white text-decoration-none">Datenschutz</router-link>
+      </v-btn>
       <v-spacer></v-spacer>
     </v-app-bar>
 
     <!-- Text Content -->
     <v-row class="header-container" align="center" justify="center">
       <v-col cols="12">
-        <div class="mx-auto" style="max-width: 1400px">
-          <h1 class="heading display-2 font-weight-bold mb-3 text-white text-uppercase">1. Majorettencorps Berlin
-            e.V.</h1>
-
-          <p class="subheading font-weight-regular text-white pl-4">Les Amis - Die Freunde</p>
-
-          <v-btn variant="outlined" class="text-white mt-10 ml-4" size="large"
-                 :style="{ backgroundColor: 'transparent', borderColor: 'white' }" @click="scrollDown">
+        <div class="mx-auto" :style="{ maxWidth: mdAndUp ? '1400px' : '90%' }">
+          <h1
+              class="heading text-white text-uppercase mb-3"
+              :class="mdAndUp ? 'display-2 font-weight-bold' : 'text-center mobile-heading font-weight-bold'"
+          >
+            1. Majorettencorps Berlin e.V.
+          </h1>
+          <p
+              class="subheading text-white"
+              :class="mdAndUp ? 'font-weight-regular pl-4' : 'font-weight-regular text-center px-2'"
+          >
+            Les Amis - Die Freunde
+          </p>
+          <v-btn
+              variant="outlined"
+              class="text-white mt-10"
+              :class="mdAndUp ? 'ml-4' : 'mx-auto d-block'"
+              size="large"
+              :style="{
+            backgroundColor: 'transparent',
+            borderColor: 'white'
+          }"
+              @click="scrollDown"
+          >
             Mehr Erfahren
           </v-btn>
         </div>
@@ -30,7 +52,7 @@
   </v-parallax>
 
   <v-row class="bgc" style="padding-top: 80px; padding-bottom:80px;">
-    <v-col cols="4">
+    <v-col cols="12" md="4" class="d-flex justify-center">
       <v-card elevation="5" class="mx-auto bg-white float-right" max-width="350" min-height="550">
         <v-img
             color="surface-variant"
@@ -50,7 +72,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="4">
+    <v-col cols="12" md="4" class="d-flex justify-center">
       <v-card elevation="5" class="mx-auto bg-white" max-width="350" min-height="550">
         <v-img
             color="surface-variant"
@@ -71,7 +93,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-    <v-col cols="4">
+    <v-col cols="12" md="4" class="d-flex justify-center">
       <v-card elevation="5" class="mx-auto bg-white float-left" max-width="350" min-height="550">
         <v-img
             color="surface-variant"
@@ -117,9 +139,9 @@
   </v-row>
 
   <v-row class="bgc" justify="center" align="center">
-    <v-col class="py-12 pr-6 text-center" style="padding-left: 120px; max-width: 800px; float: right;" cols="6">
-      <h2 class="text-left text-black">Willst du wissen wie wir entstanden sind?</h2>
-      <p class="text-left text-black mt-4">Das 1. Majorettencorps Berlin, gegründet am 28. Dezember 1978, war einer
+    <v-col class="pr-6 text-center info-row-padding" :class="mdAndUp ? 'py-12' : 'pt-6'" style="max-width: 800px; float: right;" cols="12" md="6">
+      <h2 class="text-black" :class="mdAndUp ? 'text-left' : 'text-center'">Willst du wissen wie wir entstanden sind?</h2>
+      <p class="text-black mt-4" :class="mdAndUp ? 'text-left' : 'text-center'">Das 1. Majorettencorps Berlin, gegründet am 28. Dezember 1978, war einer
         der ersten Vereine seiner Art in Deutschland. Der aus Amerika über Frankreich kommende Sport fand zunächst im
         Rheinland Anschluss an Karnevalsvereine. Nach langem Einsatz gelang es dem Berliner Verein, sich dem Deutschen
         Tanzsportverband und dem Landessportbund anzuschließen sowie als gemeinnützig anerkannt zu werden.
@@ -128,7 +150,7 @@
         gegen starke Konkurrenz. Diese Erfolge werden bis heute auf nationalen Meisterschaften
         verteidigt. </p>
     </v-col>
-    <v-col class="py-12 text-center" cols="6">
+    <v-col class="text-center" :class="mdAndUp ? 'py-12' : 'pb-0'" cols="12" md="6">
       <v-img :src="getImageUrl('klenen2.jpg')" height="350px"></v-img>
     </v-col>
   </v-row>
@@ -146,8 +168,11 @@
       class="bgc text-center d-flex flex-column"
   >
     <div>
-      <v-btn icon="mdi-instagram" href="https://www.instagram.com/1.majorettencorpsberlinlesamis/" class="mx-4" variant="text" color="black"></v-btn>
-      <v-btn icon="mdi-facebook" href="https://www.tiktok.com/@majorettencorpsberlin?_t=8rRRET4QzUP&_r=1" class="mx-4" variant="text" color="black"></v-btn>
+      <v-btn icon="mdi-instagram" href="https://www.instagram.com/1.majorettencorpsberlinlesamis/" class="mx-4" variant="text" color="black" target="_blank"></v-btn>
+      <v-btn href="https://www.tiktok.com/@majorettencorpsberlin?_t=8rRRET4QzUP&_r=1" class="mx-4" variant="text" color="black" target="_blank">
+        <v-img :src="getImageUrl('tiktok.svg')" alt="TikTok" width="24" height="24"/>
+      </v-btn>
+
     </div>
 
     <div class="pt-0 text-black">
@@ -164,8 +189,18 @@
 </template>
 
 <script>
+
+import { useDisplay } from 'vuetify';
 export default {
   name: "HeadSection",
+  setup() {
+    const { smAndDown, mdAndUp } = useDisplay();
+
+    return {
+      smAndDown,
+      mdAndUp,
+    };
+  },
   methods: {
     getImageUrl(name) {
       return `${import.meta.env.BASE_URL}img/${name}`;
@@ -191,6 +226,10 @@ export default {
   justify-content: center;
 }
 
+.mobile-heading{
+  font-size: 30px;
+}
+
 /* Make sure your text stands out over the parallax image */
 .display-2 {
   color: #fff;
@@ -214,5 +253,15 @@ export default {
 
 .bgc {
   background-color: rgba(255, 179, 179, 0.35);
+}
+
+.info-row-padding{
+  padding-left: 20px;
+}
+
+@media (min-width: 500px) {
+  .info-row-padding {
+    padding-left: 120px;
+  }
 }
 </style>

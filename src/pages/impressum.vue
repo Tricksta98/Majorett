@@ -3,46 +3,65 @@
   <!-- Navigation Bar -->
   <v-app-bar absolute flat :style="{ backgroundColor: 'rgba(250,31,31,0.45)' }">
     <v-spacer></v-spacer>
-    <v-btn variant="text" class="text-white" @click="">Home</v-btn>
-    <v-btn variant="text" class="text-white" @click="">Impressum</v-btn>
-    <v-btn variant="text" class="text-white" @click="">Datenschutz</v-btn>
+    <v-btn variant="text" class="text-white" @click="">
+      <router-link to="/" class="text-white text-decoration-none">Home</router-link>
+    </v-btn>
+    <v-btn variant="text" class="text-white" @click="">
+      <router-link to="/impressum" class="text-white">Impressum</router-link>
+    </v-btn>
+    <v-btn variant="text" class="text-white" @click="">
+      <router-link to="/datenschutz" class="text-white text-decoration-none">Datenschutz</router-link>
+    </v-btn>
     <v-spacer></v-spacer>
   </v-app-bar>
 
   <!-- Text Content -->
   <div class="mx-auto" style="margin-top: 100px; max-width: 1400px">
-    <h1 class="heading display-2 text-center font-weight-bold mb-3 text-black text-uppercase">Impressum</h1>
+    <h1 class="text-center font-weight-bold mb-3 text-black text-uppercase">Impressum</h1>
   </div>
 
-  <div class="content">
-    <h2 style="padding-left: 20px;">1. Majorettencorps Berlin e. V. • Les Amis - Die Freunde</h2>
-    <h3 style="padding-left: 20px;">Postadresse</h3>
-    <p style="padding-left: 20px;">
-      Falkentaler Steig 36
-      D-13467 Berlin, Deutschland
-    </p>
-    <h3 style="padding-left: 20px;">Telefon</h3>
-    <p style="padding-left: 20px;">
-      0151 - 41 95 30 66
-    </p>
-    <h3 style="padding-left: 20px;">E-Mail</h3>
-    <p style="padding-left: 20px;">
-      <strong>Allgemeine Informationen:</strong><br>
-      info@majorettencorps.de<br>
-      <strong>Vorstand:</strong><br>
-      vorstand@majorettencorps.de
-    </p>
+  <div class="content pl-8">
+    <h2 class="default-red mt-8">1. Majorettencorps Berlin e. V. • Les Amis - Die Freunde</h2>
 
-    <p class="mt-4" style="padding-left: 20px;">
+    <v-row class="mt-4">
+      <v-col cols="2">
+        <v-img
+            class="mx-auto mt-12"
+            height="102"
+            width="80"
+            :src="getImageUrl('mcb-logo.gif')"
+        />
+      </v-col>
+      <v-col>
+        <h3 style="">Postadresse</h3>
+        <p style="">
+          Falkentaler Steig 36
+          D-13467 Berlin, Deutschland
+        </p>
+        <h3 style="">Telefon</h3>
+        <p style="">
+          0151 - 41 95 30 66
+        </p>
+        <h3 style="">E-Mail</h3>
+        <p style="">
+          <strong>Allgemeine Informationen:</strong><br>
+          <a class="default-red" href="mailto:info@majorettencorps.de">info@majorettencorps.de</a><br>
+          <strong>Vorstand:</strong><br>
+          <a class="default-red" href="mailto:vorstand@majorettencorps.de">vorstand@majorettencorps.de</a>
+        </p>
+
+      </v-col>
+    </v-row>
+    <p class="mt-8" style="">
       <strong>Vertretungsberechtigter Vorstand:</strong><br>
       Nina Eißrich (1. Vorsitzende), Daria Skyschus (2. Vorsitzende), Nicole Schmitz, Jessica Behrend
       <br><br>
-      <strong>Registergericht:</strong><br><br>
+      <strong>Registergericht:</strong><br>
       Amtsgericht Berlin-Charlottenburg, Registernummer VR 6116Nz
     </p>
 
-    <h3 style="padding-left: 20px;">Haftungshinweis</h3>
-    <p style="padding-left: 20px;">Wir übernehmen keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind
+    <h3 class="mt-6">Haftungshinweis</h3>
+    <p style="">Wir übernehmen keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind
       ausschließlich deren Betreiber verantwortlich.</p>
 
 
